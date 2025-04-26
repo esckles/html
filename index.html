@@ -6,7 +6,7 @@
     <title>HTML</title>
     <link rel="icon" href="./assets//favicon.ico" type="image/x-icon" />
   </head>
-  <body>
+  <body style="background-color: white">
     <style>
       /* Existing styles remain unchanged */
       .os {
@@ -21,83 +21,102 @@
         gap: 2px;
       }
 
-      /* Responsive additions */
       @media (max-width: 1200px) {
-        /* Medium screens */
-        .htt {
-          font-size: 40px;
+        /* Scale down container widths */
+        div[style*="width: 90%"] {
+          width: 95% !important;
+        }
+        div[style*="width: 60%"] {
+          width: 55% !important;
+        }
+        div[style*="width: 30%"] {
+          width: 35% !important;
         }
 
-        div[style*="width: 60%"],
-        div[style*="width: 30%"] {
+        /* Scale down images */
+        img {
+          max-width: 90% !important;
+          height: auto !important;
+        }
+      }
+
+      @media (max-width: 992px) {
+        /* Further scale down */
+        div[style*="width: 60%"] {
           width: 50% !important;
         }
+        div[style*="width: 30%"] {
+          width: 40% !important;
+        }
 
-        img {
-          max-width: 100%;
-          height: auto;
+        /* Adjust font sizes */
+        .htt {
+          font-size: 2rem;
+        }
+        div[style*="font-size: 100px"] {
+          font-size: 70px !important;
         }
       }
 
       @media (max-width: 768px) {
-        /* Small screens */
-        .htt {
-          font-size: 30px;
-          height: 30vh;
-        }
-
-        div[style*="display: flex"] {
-          flex-direction: column !important;
-        }
-
+        /* Mobile adjustments */
         div[style*="width: 60%"],
-        div[style*="width: 30%"],
-        div[style*="width: 90%"] {
-          width: 100% !important;
-          margin-left: 0 !important;
+        div[style*="width: 30%"] {
+          width: 45% !important;
         }
 
-        div[style*="height: 60vh"],
-        div[style*="height: 70vh"],
-        div[style*="height: 80vh"] {
-          height: auto !important;
-          min-height: 300px;
+        /* Scale down absolute positioning */
+        div[style*="left: 180px"] {
+          left: 60px !important;
         }
 
-        div[style*="gap: 200px"] {
-          gap: 50px !important;
-          flex-wrap: wrap;
-        }
-
-        ol li div[style*="display: flex"] {
-          flex-wrap: wrap;
-        }
-      }
-
-      @media (max-width: 480px) {
-        /* Extra small screens */
-        .htt {
-          font-size: 24px;
-          height: 25vh;
-        }
-
-        div[style*="font-size: 100px"] {
-          font-size: 60px !important;
-        }
-
-        div[style*="position: absolute"] {
-          position: relative !important;
-          top: auto !important;
-          left: auto !important;
-        }
-
+        /* Scale down images further */
         img {
-          width: 100% !important;
-          height: auto !important;
+          max-width: 85% !important;
         }
       }
-      div + img {
-        border-radius: 5px;
+
+      @media (max-width: 576px) {
+        /* Small mobile scaling */
+        div[style*="width: 60%"],
+        div[style*="width: 30%"] {
+          width: 40% !important;
+        }
+
+        /* Adjust font sizes */
+        .htt {
+          font-size: 1.5rem;
+        }
+        div[style*="font-size: 100px"] {
+          font-size: 50px !important;
+        }
+
+        /* Scale down positioning */
+        div[style*="left: 180px"] {
+          left: 30px !important;
+        }
+      }
+
+      @media (max-width: 400px) {
+        /* Extra small adjustments */
+        div[style*="width: 60%"],
+        div[style*="width: 30%"] {
+          width: 35% !important;
+        }
+
+        /* Final font scaling */
+        .htt {
+          font-size: 1.2rem;
+        }
+        div[style*="font-size: 100px"] {
+          font-size: 40px !important;
+        }
+      }
+
+      /* Force all containers to scale proportionally */
+      div[style*="border: 1px solid"] {
+        box-sizing: border-box !important;
+        max-width: 100% !important;
       }
 
       @keyframes example {
@@ -137,13 +156,14 @@
         font-size: 50px;
         display: flex;
       }
-    </style>
-    <div
-      style="
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+      .mainholder {
+        background-color: black;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
-      "
-    >
+        min-height: 100%;
+      }
+    </style>
+    <div class="mainholder">
       <header
         style="
           width: 100%;
@@ -175,7 +195,14 @@
           background-color: white;
         "
       >
-        <div style="width: 90%; height: 100%; padding: 10px">
+        <div
+          style="
+            width: 90%;
+            height: 100%;
+            padding: 10px;
+            background-color: white;
+          "
+        >
           <div class="htt">
             <p>What Is HTML?</p>
             <div
@@ -369,7 +396,7 @@
                   width="600px"
                   height="250px"
                 /> -->
-                <div style="padding: 7px; font-size: 18px">
+                <div style="padding: 10px; font-size: 14px; margin-left: 200px">
                   <p>
                     HTML (HyperText Markup Language) is made up of a series of
                     elements, which are essentially building blocks that define
